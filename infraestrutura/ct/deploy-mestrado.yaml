@@ -1,0 +1,19 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nginx-mestrado-novo 
+  labels:
+    name: nginx-ws
+spec:
+  replicas: 6 
+  template: 
+    metadata:
+      labels:
+        app: nginx-ws
+    spec:
+      containers:
+      - name: nginx
+        image: docker.io/leonml02/mestrado:1.0.6
+        ports:
+        - containerPort: 80
